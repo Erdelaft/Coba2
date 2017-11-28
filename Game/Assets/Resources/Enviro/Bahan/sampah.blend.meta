@@ -1,0 +1,234 @@
+fileFormatVersion: 2
+guid: 4838a85b878857e4c826b03139f2110b
+timeCreated: 1511879519
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Cylinder
+    100002: Cylinder_001
+    100004: Cylinder_002
+    100006: Cylinder_003
+    100008: Cylinder_004
+    100010: Plane
+    100012: Plane_001
+    100014: Plane_002
+    100016: Plane_003
+    100018: Plane_004
+    100020: Plane_005
+    100022: Plane_006
+    100024: //RootNode
+    400000: Cylinder
+    400002: Cylinder_001
+    400004: Cylinder_002
+    400006: Cylinder_003
+    400008: Cylinder_004
+    400010: Plane
+    400012: Plane_001
+    400014: Plane_002
+    400016: Plane_003
+    400018: Plane_004
+    400020: Plane_005
+    400022: Plane_006
+    400024: //RootNode
+    2300000: Cylinder
+    2300002: Cylinder_001
+    2300004: Cylinder_002
+    2300006: Cylinder_003
+    2300008: Cylinder_004
+    2300010: Plane
+    2300012: Plane_001
+    2300014: Plane_002
+    2300016: Plane_003
+    2300018: Plane_004
+    2300020: Plane_005
+    2300022: Plane_006
+    3300000: Cylinder
+    3300002: Cylinder_001
+    3300004: Cylinder_002
+    3300006: Cylinder_003
+    3300008: Cylinder_004
+    3300010: Plane
+    3300012: Plane_001
+    3300014: Plane_002
+    3300016: Plane_003
+    3300018: Plane_004
+    3300020: Plane_005
+    3300022: Plane_006
+    4300000: Plane_006
+    4300002: Plane_005
+    4300004: Plane_004
+    4300006: Plane_003
+    4300008: Plane_002
+    4300010: Plane_001
+    4300012: Cylinder_004
+    4300014: Cylinder_003
+    4300016: Cylinder_002
+    4300018: Cylinder_001
+    4300020: Cylinder
+    4300022: Plane
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: default
+    second: {fileID: 2100000, guid: 9bcde4d88b40b3b4cba89fe2efcd9e63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: default_001
+    second: {fileID: 2100000, guid: 420ff50c5770e8348bd236b8e851af08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: garispermukaan
+    second: {fileID: 2100000, guid: e5b0fecdfa559974285da5deec4e1d75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: garispermukaan_001
+    second: {fileID: 2100000, guid: 4495c3901af634e488c681b33967bfaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: permukaan
+    second: {fileID: 2100000, guid: 235881a32bcded94f80ca985e5407a33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: permukaan1
+    second: {fileID: 2100000, guid: 9c66f5730a7a60847a434ffcaa89792a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: permukaan1_001
+    second: {fileID: 2100000, guid: e4b54d5f1b3ab154793ba5d9f52b3a6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: permukaan1_002
+    second: {fileID: 2100000, guid: 62d53f19545161b4abfe944ff96b9a24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: permukaan2
+    second: {fileID: 2100000, guid: 4664a5c26503b264695f6e27505b9a30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: permukaan2_001
+    second: {fileID: 2100000, guid: 71d74e605c1513c46b0734b67da56e25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: permukaan3
+    second: {fileID: 2100000, guid: 721a268e1d6ae3e41afee5882b0205ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: permukaan3_001
+    second: {fileID: 2100000, guid: c7fa1de9099f7c141b1f8d89e501864c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: permukaan4
+    second: {fileID: 2100000, guid: e2ab77d1de5a327459110bf869d84807, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: permukaan4_001
+    second: {fileID: 2100000, guid: 89889e6d2647aac4c9d78b377fccbf8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: permukaan5
+    second: {fileID: 2100000, guid: 463d1e91b7882944ea80acce21eb32f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tutup
+    second: {fileID: 2100000, guid: 81ed999d36f626a438c706a5c522ef03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tutup_001
+    second: {fileID: 2100000, guid: 24b06992620157846a2af16386e73fbc, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

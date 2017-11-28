@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: 989599eb0c0a6ad45b46c2deeddf9c79
+timeCreated: 1511879526
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Icosphere_001
+    100002: Icosphere_005
+    100004: Plane
+    100006: Plane_001
+    100008: //RootNode
+    400000: Icosphere_001
+    400002: Icosphere_005
+    400004: Plane
+    400006: Plane_001
+    400008: //RootNode
+    2300000: Icosphere_001
+    2300002: Icosphere_005
+    2300004: Plane
+    2300006: Plane_001
+    3300000: Icosphere_001
+    3300002: Icosphere_005
+    3300004: Plane
+    3300006: Plane_001
+    4300000: Icosphere_005
+    4300002: Icosphere_001
+    4300004: Plane_001
+    4300006: Plane
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: batang
+    second: {fileID: 2100000, guid: 40d7c94d5640ae0438282dbee1610dd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: batang_001
+    second: {fileID: 2100000, guid: dabc2d39cc70b254c93f796dc1c37ada, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: batang_002
+    second: {fileID: 2100000, guid: 25e82c4eba4742847a2b6c320cf0bbc1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: godong
+    second: {fileID: 2100000, guid: 1a9dd7ea436cb7f45bfc2685a5bbcee0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: godong_001
+    second: {fileID: 2100000, guid: 1161af9fe34b98d4a9d51b159e95c948, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: godong_002
+    second: {fileID: 2100000, guid: 679ae0875ce80d44c84cc43bd48da3c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: godong_003
+    second: {fileID: 2100000, guid: ce26d8f998e95a54d8b3b7a407a439b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: godong_004
+    second: {fileID: 2100000, guid: 3201a4caf4da85c4ab009889a27c8a54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: godong_005
+    second: {fileID: 2100000, guid: 8eb34d617afd37c4fb33ef71280a1b23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: godong_006
+    second: {fileID: 2100000, guid: 21d8559864da5c947abc5ada7e3d5a27, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
