@@ -7,9 +7,9 @@ using System;
 public class VirtualController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
 	private Image bgImage, joystickImage;					// bgImage untuk area controller, joystickImage untuk controller
-	public GameObject playerViewMode, mapsViewMode;	
+	public GameObject playerViewMode, mapsViewMode;
 
-	public Vector3 InputDirection { set; get; }
+    public Vector3 InputDirection { set; get; }
 
 	private void Start()
 	{
@@ -17,6 +17,11 @@ public class VirtualController : MonoBehaviour, IDragHandler, IPointerDownHandle
 		joystickImage = transform.GetChild(0).GetComponent<Image>();
 		InputDirection = Vector3.zero;
 	}
+
+    void Update()
+    {
+        Debug.Log(InputDirection);
+    }
 
 	public void OnDrag(PointerEventData ped)		// Memberikan nilai untuk joystickImage ketika digerakkan
 	{
@@ -33,6 +38,8 @@ public class VirtualController : MonoBehaviour, IDragHandler, IPointerDownHandle
 			InputDirection = new Vector3(x, 0, y);
 			InputDirection = (InputDirection.magnitude > 1) ? InputDirection.normalized : InputDirection;
 			joystickImage.rectTransform.anchoredPosition = new Vector3(InputDirection.x * (bgImage.rectTransform.sizeDelta.x / 3), InputDirection.z * (bgImage.rectTransform.sizeDelta.y / 3));
+
+            
 		}
 	}
 
