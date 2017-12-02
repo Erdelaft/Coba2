@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
-	public Button modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn;
+	public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn;
     
     // Use this for initialization
     void Start ()
@@ -23,20 +23,26 @@ public class GameplayManager : MonoBehaviour
 	// Mode Menanam Pohon
 	public void ModeTanamPohon()
 	{
-
+        modeAmbilSampah.SetActive(false);
+        modeBangunSaluranAir.SetActive(false);
+        modeTanamPohon.SetActive(true);
 	}
 
 	// Mode Mengambil Sampah
 	public void ModeAmbilSampah()
 	{
-
-	}
+        modeAmbilSampah.SetActive(true);
+        modeBangunSaluranAir.SetActive(false);
+        modeTanamPohon.SetActive(false);
+    }
 
 	// Mode Membangun Saluran Air
 	public void ModeBangunSaluranAir()
 	{
-
-	}
+        modeAmbilSampah.SetActive(false);
+        modeBangunSaluranAir.SetActive(true);
+        modeTanamPohon.SetActive(false);
+    }
 
 	// Memperlihatkan tingkat kepedulian dan Options
 	public void AvatarBtn()
