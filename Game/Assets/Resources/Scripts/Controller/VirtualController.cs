@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System;
 
 public class VirtualController : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
@@ -20,7 +18,7 @@ public class VirtualController : MonoBehaviour, IDragHandler, IPointerDownHandle
 
     void Update()
     {
-        Debug.Log(InputDirection);
+        //Debug.Log(InputDirection);
     }
 
 	public void OnDrag(PointerEventData ped)		// Memberikan nilai untuk joystickImage ketika digerakkan
