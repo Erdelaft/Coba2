@@ -1168,7 +1168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objekRange: {fileID: 42933180}
   areaImage: {fileID: 42933181}
-  jumlahSampah: 0
   objekSampah:
   - {fileID: 100000, guid: 4838a85b878857e4c826b03139f2110b, type: 3}
   - {fileID: 100002, guid: 4838a85b878857e4c826b03139f2110b, type: 3}
@@ -1183,6 +1182,8 @@ MonoBehaviour:
   - {fileID: 100020, guid: 4838a85b878857e4c826b03139f2110b, type: 3}
   - {fileID: 100022, guid: 4838a85b878857e4c826b03139f2110b, type: 3}
   delayMuncul: 12
+  lokasiSampah: 1.5
+  rangeJumlahSampah: 0c00000019000000
 --- !u!1 &1064340875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,7 +1698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 639619361}
-  playerSpeed: 0.025
+  playerSpeed: 0.1
 --- !u!54 &1290453084
 Rigidbody:
   m_ObjectHideFlags: 0
