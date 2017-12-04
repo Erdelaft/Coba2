@@ -7,6 +7,7 @@ public class RealTimeClock : MonoBehaviour
 {
     public Text teksWaktu;
     public Transform sunTransform;
+    public Light sun;
     public float time, intensity;
     public int days;
     public Color fogDay = Color.grey, fogNight = Color.black;
@@ -22,6 +23,10 @@ public class RealTimeClock : MonoBehaviour
             teksWaktu.text = tempWaktu[0] + ":0" + tempWaktu[1];
         else
             teksWaktu.text = tempWaktu[0] + ":" + tempWaktu[1];
+
+        time = Convert.ToInt32(tempWaktu[0]) * Convert.ToInt32(tempWaktu[1]) * 60;
+
+        Debug.Log("Time : " + time);
 
         sunTransform.rotation = Quaternion.Euler(new Vector3((time - 21600) / 86400 * 360, 0, 0));
 
