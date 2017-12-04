@@ -3296,7 +3296,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2105237799}
   - component: {fileID: 2105237798}
-  - component: {fileID: 2105237800}
   - component: {fileID: 2105237801}
   m_Layer: 0
   m_Name: GameplayManager
@@ -3334,27 +3333,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2105237800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2105237797}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc6f7252286682342b09d9233950c634, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 43200
-  sunTransform: {fileID: 1117708368}
-  sun: {fileID: 1117708367}
-  timeText: {fileID: 1874702651}
-  days: 0
-  intensity: 0
-  fogDay: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  fogNight: {r: 0, g: 0, b: 0, a: 1}
-  speed: 30
-  iconCycle: {fileID: 1579667958}
 --- !u!114 &2105237801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3369,8 +3347,3 @@ MonoBehaviour:
   teksWaktu: {fileID: 1874702651}
   sunTransform: {fileID: 1117708368}
   sun: {fileID: 1117708367}
-  time: 0
-  intensity: 0
-  days: 0
-  fogDay: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  fogNight: {r: 0, g: 0, b: 0, a: 1}

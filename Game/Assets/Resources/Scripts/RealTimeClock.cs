@@ -8,9 +8,9 @@ public class RealTimeClock : MonoBehaviour
     public Text teksWaktu;
     public Transform sunTransform;
     public Light sun;
-    public float time, intensity;
-    public int days;
-    public Color fogDay = Color.grey, fogNight = Color.black;
+    float time, intensity;
+    //int days;
+    Color fogDay = Color.grey, fogNight = Color.black;
     
     // Update is called once per frame
     void Update ()
@@ -43,11 +43,6 @@ public class RealTimeClock : MonoBehaviour
 
         sun.intensity = intensity;
     }
-    /*
-    TimeSpan getTimeSpan()
-    {
-
-    }*/
 
     string waktuSekarang()
     {
