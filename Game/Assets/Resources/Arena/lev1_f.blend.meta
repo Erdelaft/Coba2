@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 9307081d585251749b4744d3bb952a19
-timeCreated: 1512135552
+guid: fd25d9e12784a3e43b42f1284c044672
+timeCreated: 1512404383
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -16,8 +16,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: unnamed
-    second: {fileID: 2100000, guid: 1220da72dcd203d4aaabb941cd5c3235, type: 2}
+      name: default
+    second: {fileID: 2100000, guid: 34832b898ec272944ae8a22251470f2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jalan
+    second: {fileID: 2100000, guid: d721c63f6511877489e928587149cdeb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jembatan
+    second: {fileID: 2100000, guid: f736cacb7f018764d826bbac1991966a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pegangan_jembatan
+    second: {fileID: 2100000, guid: 509be4c4f3ccdfc428e9f097f4bba2b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tanah
+    second: {fileID: 2100000, guid: a886106755ccd464e87704a605d5b513, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trotoar
+    second: {fileID: 2100000, guid: 792c0f22d15e182489e1b7b48aec6255, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
