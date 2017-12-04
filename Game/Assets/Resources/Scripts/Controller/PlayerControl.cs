@@ -3,13 +3,16 @@
 public class PlayerControl : MonoBehaviour
 {
     public VirtualController joystick;
+    public AmbilSampah ambilSampah;
     public float playerSpeed = 4f;
     Transform playerPos;
+    int skor = 0;
     
 	// Update is called once per frame
 	void Update ()
     {
         playerPos = GetComponent<Transform>();
+        ambilSampah = GetComponent<AmbilSampah>();
 
         transform.position = playerPos.position;
 
@@ -18,4 +21,17 @@ public class PlayerControl : MonoBehaviour
             transform.position += joystick.InputDirection * playerSpeed;
         }
 	}
+
+    void OnCollisionEnter(Collision ambil)
+    {
+        if (ambil.gameObject.tag == "Sampah")
+        {
+            Destroy(ambil.gameObject);
+
+            skor++;
+
+            ambilSampah.tempSkor[0] = skor.ToString();
+            Debug.Log( "Skor : " + ambilSampah.tempSkor[0]);
+        }
+    }
 }

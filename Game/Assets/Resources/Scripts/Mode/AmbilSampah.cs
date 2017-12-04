@@ -9,7 +9,10 @@ public class AmbilSampah : MonoBehaviour
     public Text jumlahSampahDiAmbil;
     public float delayMuncul = 12f, lokasiSampah = 1.5f;
     public int[] rangeJumlahSampah;
+    public string[] tempSkor;
+    public string teksSkor;
 
+    GameObject kumpulanSampah;
     float areaSampahX, areaSampahZ;
     int jumlahSampah, skorSampahDiAmbil;
     int n;
@@ -29,21 +32,33 @@ public class AmbilSampah : MonoBehaviour
         {
             num = Random.Range(0, objekSampah.Length);      // Random objek sampah
 
-            Instantiate(objekSampah[num], new Vector3(Random.Range(-areaSampahX, areaSampahX), lokasiSampah, Random.Range(-areaSampahZ, areaSampahZ)), Quaternion.identity);
+            kumpulanSampah = Instantiate(objekSampah[num], new Vector3(Random.Range(-areaSampahX, areaSampahX), lokasiSampah, Random.Range(-areaSampahZ, areaSampahZ)), Quaternion.identity) as GameObject;
+            kumpulanSampah.tag = "Sampah";
         }
-        
+        /*
+        teksSkor = jumlahSampahDiAmbil.text;
+        //Debug.Log( "Teks Skor : " + teksSkor );
+
+        tempSkor = teksSkor.Split("/"[0]);
+        tempSkor[0] = skorSampahDiAmbil.ToString();
+        tempSkor[1] = jumlahSampah.ToString();
+
+        jumlahSampahDiAmbil.text = tempSkor[0] + " / " + tempSkor[1];
+        */
         Debug.Log("x = " + Random.Range(4f, areaSampahX) + "/nz = " + Random.Range(4f, areaSampahZ));
     }
 
     void Update()
     {
-        string teksSkor = jumlahSampahDiAmbil.text;
+        teksSkor = jumlahSampahDiAmbil.text;
         //Debug.Log( "Teks Skor : " + teksSkor );
-        
-        string[] tempSkor = teksSkor.Split("/"[0]);
+
+        tempSkor = teksSkor.Split("/"[0]);
         tempSkor[0] = skorSampahDiAmbil.ToString();
         tempSkor[1] = jumlahSampah.ToString();
 
         jumlahSampahDiAmbil.text = tempSkor[0] + " / " + tempSkor[1];
-    }	
+
+    }
+    
 }

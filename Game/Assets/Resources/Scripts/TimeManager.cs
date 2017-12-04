@@ -51,7 +51,7 @@ public class TimeManager : MonoBehaviour
 
         currentTime = TimeSpan.FromSeconds(time);
 
-        Debug.Log( "Current Time : " + currentTime);
+        //Debug.Log( "Current Time : " + currentTime);
 
         string[] tempTime = currentTime.ToString().Split(":"[0]);
         timeText.text = tempTime[0] + ":" + tempTime[1];
