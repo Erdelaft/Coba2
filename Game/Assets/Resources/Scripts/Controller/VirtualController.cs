@@ -36,7 +36,6 @@ public class VirtualController : MonoBehaviour, IDragHandler, IPointerDownHandle
 			InputDirection = new Vector3(x, 0, y);
 			InputDirection = (InputDirection.magnitude > 1) ? InputDirection.normalized : InputDirection;
 			joystickImage.rectTransform.anchoredPosition = new Vector3(InputDirection.x * (bgImage.rectTransform.sizeDelta.x / 3), InputDirection.z * (bgImage.rectTransform.sizeDelta.y / 3));
-
             
 		}
 	}

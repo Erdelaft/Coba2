@@ -5,6 +5,7 @@ public class PlayerControl : MonoBehaviour
     public VirtualController joystick;
     public AmbilSampah ambilSampah;
     public float playerSpeed = 4f;
+    public Animation playerAnim;
     Transform playerPos;
     int skor = 0;
     
@@ -19,7 +20,9 @@ public class PlayerControl : MonoBehaviour
         if(joystick.InputDirection != Vector3.zero)
         {
             transform.position += joystick.InputDirection * playerSpeed;
+            
         }
+        
 	}
 
     void OnCollisionEnter(Collision ambil)
