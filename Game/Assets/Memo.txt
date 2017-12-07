@@ -1,0 +1,9 @@
+Tambah 1 mode pengganti mode sampah
+
+Mode sampah menjadi mode pengganggu
+
+Animasi ambil sampah
+
+Menyimpan setiap keadaan ketika berganti ke mode lain
+
+Fix terrain

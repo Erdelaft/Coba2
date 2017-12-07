@@ -1,16 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
-	public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah;
-    
+	public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, rumah;
+    public GameObject[] kumpulanRumah;
+    public int jumlahRumah;
+
     // Use this for initialization
     void Start ()
 	{
-        
+        float num = 5;
+        int i = 0;
+        foreach(GameObject inRumah in kumpulanRumah)
+        {
+            rumah = Instantiate(kumpulanRumah[i], new Vector3( num, 0f, 24f), Quaternion.Euler(-90f, 0f, 0f));
+            rumah.AddComponent<Rigidbody>();
+            rumah.AddComponent<Collider>();
+
+            i++;
+            num += 4;
+        }
         
     }
 	

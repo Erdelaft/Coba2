@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class PlayerControl : MonoBehaviour
 {
     public VirtualController joystick;
     public AmbilSampah ambilSampah;
     public float playerSpeed = 4f;
-    public Animation playerAnim;
+    public Animator playerAnim;
+
     Transform playerPos;
     int skor = 0;
     
@@ -25,7 +27,7 @@ public class PlayerControl : MonoBehaviour
         
 	}
 
-    void OnCollisionEnter(Collision ambil)
+    void OnColliedrEnter(Collider ambil)
     {
         if (ambil.gameObject.tag == "Sampah")
         {

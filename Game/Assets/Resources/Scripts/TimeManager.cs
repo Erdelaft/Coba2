@@ -15,7 +15,7 @@ public class TimeManager : MonoBehaviour
     public float intensity;
     public Color fogDay = Color.grey, fogNight = Color.black;
 
-    public int speed;
+    public int speed = 75;
     // Variabel untuk jam realtime
 
     // Variabel untuk icon

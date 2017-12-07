@@ -8,6 +8,7 @@ public class RealTimeClock : MonoBehaviour
     public Text teksWaktu;
     public Transform sunTransform;
     public Light sun;   // 1
+    public float speedTime = 1f;
 
     [SerializeField]
     [Range(0, 1)]
@@ -34,7 +35,7 @@ public class RealTimeClock : MonoBehaviour
         else
             teksWaktu.text = tempWaktu[0] + ":" + tempWaktu[1];
 
-        time = (Convert.ToInt32(tempWaktu[0]) * 3600f) + (Convert.ToInt32(tempWaktu[1]) * 60f);
+        time = ((Convert.ToInt32(tempWaktu[0]) * 3600f) + (Convert.ToInt32(tempWaktu[1]) * 60f)) / speedTime;
 
         Debug.Log("Time : " + time);
         

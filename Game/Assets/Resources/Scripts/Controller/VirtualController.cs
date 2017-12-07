@@ -7,6 +7,12 @@ public class VirtualController : MonoBehaviour, IDragHandler, IPointerDownHandle
 	private Image bgImage, joystickImage;					// bgImage untuk area controller, joystickImage untuk controller
 	public GameObject playerViewMode, mapsViewMode;
 
+    public Camera kamera;
+    public float speedRotasi = 0.5f, arahKamera = -1;
+    float rotasiKameraX = 0f, rotasiKameraY = 0f;
+    Vector3 originRotasi;
+    Touch inputTouch = new Touch();
+
     public Vector3 InputDirection { set; get; }
 
 	private void Start()
@@ -14,10 +20,36 @@ public class VirtualController : MonoBehaviour, IDragHandler, IPointerDownHandle
 		bgImage = GetComponent<Image>();
 		joystickImage = transform.GetChild(0).GetComponent<Image>();
 		InputDirection = Vector3.zero;
+
+        originRotasi = kamera.transform.eulerAngles;
+        rotasiKameraX = originRotasi.x;
+        rotasiKameraY = originRotasi.y;
 	}
 
-    void Update()
+    void FixedUpdate()
     {
+        foreach(Touch touch in Input.touches)
+        {
+            if (touch.phase == TouchPhase.Began)
+            {
+                inputTouch = touch;
+            }
+            else if (touch.phase == TouchPhase.Moved)
+            {
+                // If swiping
+                float deltaX = inputTouch.position.x - touch.position.x;
+                float deltaY = inputTouch.position.x - touch.position.y;
+                rotasiKameraX -= deltaY * Time.deltaTime * speedRotasi * arahKamera;
+                rotasiKameraY += deltaX * Time.deltaTime * speedRotasi * arahKamera;
+
+                Mathf.Clamp(rotasiKameraY, -60f, 60f);
+                kamera.transform.eulerAngles = new Vector3(rotasiKameraX, rotasiKameraY, 0f);
+            }
+            else if (touch.phase == TouchPhase.Ended)
+            {
+                inputTouch = new Touch();
+            }
+        }
         //Debug.Log(InputDirection);
     }
 
