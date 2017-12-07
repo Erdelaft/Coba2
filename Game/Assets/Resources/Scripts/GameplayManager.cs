@@ -6,6 +6,7 @@ public class GameplayManager : MonoBehaviour
 	public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, rumah;
     public GameObject[] kumpulanRumah;
     public int jumlahRumah;
+    public float nilaiX, nilaiY, nilaiZ;
 
     // Use this for initialization
     void Start ()
@@ -14,10 +15,10 @@ public class GameplayManager : MonoBehaviour
         int i = 0;
         foreach(GameObject inRumah in kumpulanRumah)
         {
-            rumah = Instantiate(kumpulanRumah[i], new Vector3( num, 0f, 24f), Quaternion.Euler(-90f, 0f, 0f));
+            rumah = Instantiate(kumpulanRumah[i], new Vector3( nilaiX + num, nilaiY, nilaiZ), Quaternion.Euler(-90f, 0f, 0f));
             rumah.AddComponent<Rigidbody>();
-            rumah.AddComponent<Collider>();
-
+            rumah.AddComponent<BoxCollider>();
+            
             i++;
             num += 4;
         }

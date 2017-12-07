@@ -25,7 +25,7 @@ public class VirtualController : MonoBehaviour, IDragHandler, IPointerDownHandle
         rotasiKameraX = originRotasi.x;
         rotasiKameraY = originRotasi.y;
 	}
-
+    /*
     void FixedUpdate()
     {
         foreach(Touch touch in Input.touches)
@@ -51,7 +51,7 @@ public class VirtualController : MonoBehaviour, IDragHandler, IPointerDownHandle
             }
         }
         //Debug.Log(InputDirection);
-    }
+    }*/
 
 	public void OnDrag(PointerEventData ped)		// Memberikan nilai untuk joystickImage ketika digerakkan
 	{

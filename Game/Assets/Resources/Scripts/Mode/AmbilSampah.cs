@@ -35,7 +35,8 @@ public class AmbilSampah : MonoBehaviour
             kumpulanSampah = Instantiate(objekSampah[num], new Vector3(Random.Range(-areaSampahX, areaSampahX), lokasiSampah, Random.Range(-areaSampahZ, areaSampahZ)), Quaternion.identity) as GameObject;
             kumpulanSampah.tag = "Sampah";
             kumpulanSampah.AddComponent<Rigidbody>();
-            kumpulanSampah.AddComponent<Collider>();
+            kumpulanSampah.AddComponent<BoxCollider>();
+
         }
         /*
         teksSkor = jumlahSampahDiAmbil.text;
