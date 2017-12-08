@@ -22,7 +22,7 @@ public class PlayerControl : MonoBehaviour
         if(joystick.InputDirection != Vector3.zero)
         {
             transform.position += joystick.InputDirection * playerSpeed;
-            
+            transform.Rotate(0f, 0f, 0f);
         }
         
 	}
