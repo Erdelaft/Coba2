@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: e468fc648402edb45bddb1f271a04761
+timeCreated: 1512748849
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature_001
+    100002: Armature_003
+    100004: betis_kanan
+    100006: betis_kiri
+    100008: Cube_011
+    100010: dada_kanan
+    100012: dada_kiri
+    100014: dada_tengah
+    100016: engkel_kanan
+    100018: engkel_kiri
+    100020: jari_tangan_kanan
+    100022: jari_tangan_kiri
+    100024: jempol_kanan
+    100026: jepol_tangan_kiri
+    100028: kepala
+    100030: leher
+    100032: lengan_atas_kanan
+    100034: lengan_atas_kiri
+    100036: lengan_bawah_kanan
+    100038: lengan_bawah_kiri
+    100040: paha_kanan
+    100042: paha_kiri
+    100044: pantat
+    100046: perut
+    100048: telapak_tangan_kanan
+    100050: telapak_tangan_kiri
+    100052: //RootNode
+    100054: tumit_kanan
+    100056: tumit_kiri
+    400000: Armature_001
+    400002: Armature_003
+    400004: betis_kanan
+    400006: betis_kiri
+    400008: Cube_011
+    400010: dada_kanan
+    400012: dada_kiri
+    400014: dada_tengah
+    400016: engkel_kanan
+    400018: engkel_kiri
+    400020: jari_tangan_kanan
+    400022: jari_tangan_kiri
+    400024: jempol_kanan
+    400026: jepol_tangan_kiri
+    400028: kepala
+    400030: leher
+    400032: lengan_atas_kanan
+    400034: lengan_atas_kiri
+    400036: lengan_bawah_kanan
+    400038: lengan_bawah_kiri
+    400040: paha_kanan
+    400042: paha_kiri
+    400044: pantat
+    400046: perut
+    400048: telapak_tangan_kanan
+    400050: telapak_tangan_kiri
+    400052: //RootNode
+    400054: tumit_kanan
+    400056: tumit_kiri
+    4300000: Cube_011
+    7400000: Default Take
+    7400002: ambil_sampah
+    7400004: Idle
+    7400006: palu
+    7400008: tabur_siram
+    7400010: walk_run
+    9500000: //RootNode
+    13700000: Cube_011
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 45ab5346d8ea3f3439f54c606651c409, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: awake
+    second: {fileID: 2100000, guid: d2899e89bdd19a94a9c7cbf0160e09f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: baju
+    second: {fileID: 2100000, guid: 14888c3f125a83b469b80cd410fd211b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: garis
+    second: {fileID: 2100000, guid: f473e44b5c8f0d0478e637de3c4af616, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gariskaoskaki
+    second: {fileID: 2100000, guid: d55e47f5340bb384a9c689e781f6dc50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kaoskaki
+    second: {fileID: 2100000, guid: 45f21180bc5851148b67941197160b30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: katok
+    second: {fileID: 2100000, guid: 03e74aed8d85bf9418cecceb0d80f17f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kutungan
+    second: {fileID: 2100000, guid: 55b038c28a2cee84786ce6b895c27c58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lingkis
+    second: {fileID: 2100000, guid: 55b9e62626f6ace44924ea3ae4eab77f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lingkiskatok
+    second: {fileID: 2100000, guid: 2f5017a90ca50494a8b07022a096849e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sabuk
+    second: {fileID: 2100000, guid: f055309ebfa6deb428dbb174243ae7bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sepatu
+    second: {fileID: 2100000, guid: e6b131f60f2c06945a36baade3e9a4c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: topi
+    second: {fileID: 2100000, guid: a3dc23d20751c8b46827299c7c9720ae, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
