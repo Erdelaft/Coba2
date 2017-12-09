@@ -5,16 +5,58 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-	public GameObject PanelMenu, PanelQuitConfirmation;
+	public GameObject panelMenu, panelQuitConfirmation, panelSetting, panelOption, panelAbout;
 
 	public void ChangeScene(string name)
 	{
 		SceneManager.LoadScene(name);
 	}
 
-	public void PanelQuit(bool active)
+    public void PanelAbout(bool aktif)
+    {
+        panelAbout.SetActive(!aktif);
+        panelOption.SetActive(aktif);
+    }
+
+    public void PanelMenu(bool aktif)
+    {
+        panelMenu.SetActive(!aktif);
+        panelMenu.SetActive(aktif);
+    }
+
+    public void PanelSetting(bool aktif)
+    {
+        panelSetting.SetActive(!aktif);
+        panelOption.SetActive(aktif);
+    }
+
+    public void PanelOption(bool aktif)
+    {
+        panelOption.SetActive(!aktif);
+        panelMenu.SetActive(aktif);
+    }
+
+    public void BackButton()
+    {
+        if (panelOption.activeInHierarchy == true)
+        {
+            panelOption.SetActive(false);
+            panelMenu.SetActive(true);
+        }
+        else if(panelSetting.activeInHierarchy == true)
+        {
+            panelOption.SetActive(true);
+            panelSetting.SetActive(false);
+        }
+        else if(panelQuitConfirmation.activeInHierarchy == true)
+        {
+            panelQuitConfirmation.SetActive(false);
+        }
+    }
+
+	public void PanelQuit(bool aktif)
 	{
-		PanelQuitConfirmation.SetActive(active);
+        panelQuitConfirmation.SetActive(!aktif);
 	}
 
 	public void Quit()
