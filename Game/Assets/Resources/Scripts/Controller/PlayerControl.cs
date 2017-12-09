@@ -27,7 +27,7 @@ public class PlayerControl : MonoBehaviour
         
 	}
 
-    void OnColliedrEnter(Collider ambil)
+    void OnTriggerEnter(Collider ambil)
     {
         if (ambil.gameObject.tag == "Sampah")
         {
