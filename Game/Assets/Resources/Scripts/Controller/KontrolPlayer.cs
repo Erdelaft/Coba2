@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KontrolPlayer : MonoBehaviour
 {
@@ -27,20 +28,17 @@ public class KontrolPlayer : MonoBehaviour
             transform.Translate(new Vector3(0f, 0f, kecepatanKontrol * Time.deltaTime));
             playerAnim.Play("walk_run", -1, 0f);
         }
-
-        if (Input.GetKey(mundur))
+        else if (Input.GetKey(mundur))
         {
             transform.Translate(new Vector3(0f, 0f, -kecepatanKontrol * Time.deltaTime));
         }
-
         if (Input.GetKey(kanan))
         {
-            transform.Rotate(new Vector3(0f, -3f, 0f));
+            transform.Rotate(new Vector3(0f, kecepatanKontrol / 2f, 0f));
         }
-
         if (Input.GetKey(kiri))
         {
-            transform.Rotate(new Vector3(0f, 3f, 0f));
+            transform.Rotate(new Vector3(0f, -kecepatanKontrol / 2f, 0f));
         }
 
         inputH = Input.GetAxis("Horizontal");
@@ -60,6 +58,8 @@ public class KontrolPlayer : MonoBehaviour
 
             ambilSampah.tempSkor[0] = skor.ToString();
             Debug.Log("Skor : " + ambilSampah.tempSkor[0]);
+
+            ambilSampah.jumlahSampahDiAmbil.text = ambilSampah.tempSkor[0] + " / " + ambilSampah.tempSkor[1];
         }
     }
 }

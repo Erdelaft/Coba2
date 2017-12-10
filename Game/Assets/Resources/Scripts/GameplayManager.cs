@@ -16,7 +16,7 @@ public class GameplayManager : MonoBehaviour
         foreach(GameObject inRumah in kumpulanRumah)
         {
             rumah = Instantiate(kumpulanRumah[i], new Vector3( nilaiX + num, nilaiY, nilaiZ), Quaternion.Euler(-90f, 0f, 0f));
-            rumah.AddComponent<Rigidbody>();
+            rumah.AddComponent<Rigidbody>().mass = 200;
             rumah.AddComponent<BoxCollider>();
             
             i++;
