@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-	public GameObject panelMenu, panelQuitConfirmation, panelSetting, panelOption, panelAbout;
+	public GameObject panelMenu, panelQuitConfirmation, panelSetting,
+                      panelOption, panelAbout, panelLoading, background;
 
 	public void ChangeScene(string name)
 	{
@@ -58,6 +59,13 @@ public class MenuManager : MonoBehaviour
 	{
         panelQuitConfirmation.SetActive(!aktif);
 	}
+
+    public void Loading(bool aktif)
+    {
+        panelLoading.SetActive(!aktif);
+        panelMenu.SetActive(aktif);
+        background.SetActive(aktif);
+    }
 
 	public void Quit()
 	{
