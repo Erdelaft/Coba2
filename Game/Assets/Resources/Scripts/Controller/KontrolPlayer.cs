@@ -25,11 +25,12 @@ public class KontrolPlayer : MonoBehaviour
     {
 		if(Input.GetKey(maju))
         {
+            playerAnim.SetTrigger("walk_run");
             transform.Translate(new Vector3(0f, 0f, kecepatanKontrol * Time.deltaTime));
-            playerAnim.Play("walk_run", -1, 0f);
         }
         else if (Input.GetKey(mundur))
         {
+            playerAnim.SetTrigger("walk_run");
             transform.Translate(new Vector3(0f, 0f, -kecepatanKontrol * Time.deltaTime));
         }
         if (Input.GetKey(kanan))
@@ -40,12 +41,13 @@ public class KontrolPlayer : MonoBehaviour
         {
             transform.Rotate(new Vector3(0f, -kecepatanKontrol / 2f, 0f));
         }
-
+        playerAnim.Play("Idle", -1);
+        /*
         inputH = Input.GetAxis("Horizontal");
         inputV = Input.GetAxis("Vertical");
 
         playerAnim.SetFloat("inputH", inputH);
-        playerAnim.SetFloat("inputV", inputV);
+        playerAnim.SetFloat("inputV", inputV);*/
     }
 
     void OnTriggerEnter(Collider ambil)

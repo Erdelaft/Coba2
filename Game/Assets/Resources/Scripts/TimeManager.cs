@@ -11,6 +11,7 @@ public class TimeManager : MonoBehaviour
     public Light sun;
     public Text timeText;
     public int days;
+    LightmapSettings dayNight;
 
     public float intensity;
     public Color fogDay = Color.grey, fogNight = Color.black;
@@ -67,6 +68,8 @@ public class TimeManager : MonoBehaviour
         else
         {
             intensity = 1 - ((43200 - time) / 43200 * -1);
+
+            
         }
 
         if(iconCycle.fillAmount == 1)

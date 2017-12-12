@@ -3,16 +3,19 @@ using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
-    public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, panelAvatar, backBtn, rumah, player;
+    public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, panelAvatar, saveLoadDialog, backBtn, rumah, player;
     public GameObject[] kumpulanRumah;
     public int jumlahRumah;
     public float nilaiX, nilaiY, nilaiZ;
+    KontrolPlayer kontrolPlayer;
 
     // Use this for initialization
     void Start ()
 	{
         float num = 5;
         int i = 0;
+        kontrolPlayer = player.GetComponent<KontrolPlayer>();
+
         foreach(GameObject inRumah in kumpulanRumah)
         {
             rumah = Instantiate(kumpulanRumah[i], new Vector3( nilaiX + num, nilaiY, nilaiZ), Quaternion.Euler(-90f, 0f, 0f));
@@ -63,15 +66,30 @@ public class GameplayManager : MonoBehaviour
 	public void AvatarBtn()
 	{
         panelAvatar.SetActive(true);
-        player.GetComponentsInParent<KontrolPlayer>(false);
+        kontrolPlayer.enabled = false;
 	}
 
     public void Backbtn()
     {
         if(backBtn.activeInHierarchy == true)
         {
-            player.SetActive(true);
+            kontrolPlayer.enabled = true;
             panelAvatar.SetActive(false);
         }
+    }
+
+    public void SaveLoadDialog(bool aktif)
+    {
+        saveLoadDialog.SetActive(!aktif);
+    }
+
+    public void SaveBtn()
+    {
+
+    }
+
+    public void LoadBtn()
+    {
+
     }
 }
