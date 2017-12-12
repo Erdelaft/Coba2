@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 7d1430089afb5854892670b854d1d684, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 7e4024464a7f63a408ac3c1225f094f9, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -2718,8 +2718,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 43.897, y: 13.475, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 45.779373, y: 13.475, z: 2}
+  m_Center: {x: -0.9411888, y: 0, z: 0}
 --- !u!114 &913252735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3607,8 +3607,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 46.797, y: 13.323, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 48.54085, y: 13.323, z: 2}
+  m_Center: {x: 0.87192345, y: 0, z: 0}
 --- !u!114 &1251710894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6406,7 +6406,6 @@ MonoBehaviour:
   sun: {fileID: 1117708367}
   timeText: {fileID: 1874702651}
   days: 0
-  dayNight: {fileID: 1117708367}
   intensity: 1
   fogDay: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   fogNight: {r: 0, g: 0, b: 0, a: 1}
