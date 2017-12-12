@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
-	public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, rumah;
+    public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, panelAvatar, backBtn, rumah, player;
     public GameObject[] kumpulanRumah;
     public int jumlahRumah;
     public float nilaiX, nilaiY, nilaiZ;
@@ -62,6 +62,16 @@ public class GameplayManager : MonoBehaviour
 	// Memperlihatkan tingkat kepedulian dan Options
 	public void AvatarBtn()
 	{
-
+        panelAvatar.SetActive(true);
+        player.GetComponentsInParent<KontrolPlayer>(false);
 	}
+
+    public void Backbtn()
+    {
+        if(backBtn.activeInHierarchy == true)
+        {
+            player.SetActive(true);
+            panelAvatar.SetActive(false);
+        }
+    }
 }

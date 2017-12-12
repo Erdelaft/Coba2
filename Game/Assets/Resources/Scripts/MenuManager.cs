@@ -46,14 +46,19 @@ public class MenuManager : MonoBehaviour
             panelOption.SetActive(false);
             panelMenu.SetActive(true);
         }
-        else if(panelSetting.activeInHierarchy == true)
+        if(panelSetting.activeInHierarchy == true)
         {
             panelOption.SetActive(true);
             panelSetting.SetActive(false);
         }
-        else if(panelQuitConfirmation.activeInHierarchy == true)
+        if(panelQuitConfirmation.activeInHierarchy == true)
         {
             panelQuitConfirmation.SetActive(false);
+        }
+        if(panelAbout.activeInHierarchy == true)
+        {
+            panelAbout.SetActive(false);
+            panelOption.SetActive(true);
         }
     }
 
