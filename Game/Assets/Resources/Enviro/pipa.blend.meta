@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e4aa523c61d1b7f44b0dc60cc3c83674
-timeCreated: 1511879530
+guid: 119fad9a2bfd88d4094e1d72c1d21713
+timeCreated: 1513095141
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -23,8 +23,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: unnamed
-    second: {fileID: 2100000, guid: 9ad635032d110b7418a12bb13a4db8fa, type: 2}
+      name: Pipa
+    second: {fileID: 2100000, guid: 5d0a21a5bba026a4ba5bc99335c88179, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
