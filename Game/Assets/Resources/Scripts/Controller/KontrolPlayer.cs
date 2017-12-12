@@ -25,8 +25,8 @@ public class KontrolPlayer : MonoBehaviour
     {
 		if(Input.GetKey(maju))
         {
+			transform.Translate(new Vector3(0f, 0f, kecepatanKontrol * Time.deltaTime));
             playerAnim.SetTrigger("walk_run");
-            transform.Translate(new Vector3(0f, 0f, kecepatanKontrol * Time.deltaTime));
         }
         else if (Input.GetKey(mundur))
         {
