@@ -10,28 +10,22 @@ public class TimeManager : MonoBehaviour
     public Transform sunTransform;
     public Light sun;
     public Text timeText;
-    public int days;
-    LightmapSettings dayNight;
+    public Material daySky, nightSky;
 
     public float intensity;
     public Color fogDay = Color.grey, fogNight = Color.black;
-
+    
     public int speed = 75;
+    [SerializeField]
+    int days = 0;
     // Variabel untuk jam realtime
-
-    // Variabel untuk icon
-    public Image iconCycle;
     float num;
-    // Variabel untuk icon
 
     // Use this for initialization
     void Start ()
     {
         num = speed / 24f * 43200f;
         num /= 43200f;
-
-        iconCycle.fillAmount = time / 43200f;
-        Debug.Log("Icon = " + iconCycle.fillAmount + ", Num = " + num + ", Time = " + time);
 	}
 	
 	// Update is called once per frame
@@ -44,7 +38,7 @@ public class TimeManager : MonoBehaviour
     {
         time += speed * Time.deltaTime;
 
-        if(time > 86400)
+        if(time > 86400)        // Berganti Hari
         {
             days += 1;
             time = 0;
@@ -57,28 +51,38 @@ public class TimeManager : MonoBehaviour
         string[] tempTime = currentTime.ToString().Split(":"[0]);
         timeText.text = tempTime[0] + ":" + tempTime[1];
 
-        sunTransform.rotation = Quaternion.Euler(new Vector3((time - 21600) / 86400 * 360, 0, 0));
+        sunTransform.rotation = Quaternion.Euler(new Vector3((time - 21600) / 86400 * 360, 0, 0));      // Rotasi Matahari
 
-        iconCycle.fillAmount = ((time / 43200f) - 0.5f) / 2f * (1f);
-
+        if (time > 21600 && time < 64800)
+        {
+            intensity = 1 - (43200 - time) / 43200;
+            RenderSettings.skybox = daySky;                 // Berganti material ketika siang hari
+        }
+        if(time < 21600 || time > 64800)
+        {
+            intensity = 1 - ((43200 - time) / 43200 * -1);
+            RenderSettings.skybox = nightSky;               // Berganti material ketika malam hari
+        }
+        
+        /*
         if (time < 43200)
         {
             intensity = 1 - (43200 - time) / 43200;
+            RenderSettings.skybox = daySky;
         }
         else
         {
             intensity = 1 - ((43200 - time) / 43200 * -1);
-
-            
+            RenderSettings.skybox = nightSky;
         }
 
         if(iconCycle.fillAmount == 1)
         {
             iconCycle.fillAmount = num;
-        }
+        } 
+         */
 
-        RenderSettings.fogColor = Color.Lerp(fogNight, fogDay, intensity * intensity);
-
+        RenderSettings.fogColor = Color.Lerp(fogNight, fogDay, intensity * intensity);          // Perubahan warna matahari diantara 2 warna
         sun.intensity = intensity;
     }
 }
