@@ -331,6 +331,59 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fd25d9e12784a3e43b42f1284c044672, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &253772851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 253772852}
+  - component: {fileID: 253772853}
+  m_Layer: 0
+  m_Name: TileHouse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &253772852
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 253772851}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.1455, y: -0.022000313, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1345119280}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.0000003427267}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &253772853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 253772851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &263224712
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,8 +956,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.069782, y: 7.2726183, z: 1}
-  m_Center: {x: 0.022914521, y: -0.80790967, z: 0}
+  m_Size: {x: 2.069782, y: 5.3093, z: 1}
+  m_Center: {x: 0.022914559, y: -0.6421748, z: 0}
 --- !u!95 &388222228 stripped
 Animator:
   m_PrefabParentObject: {fileID: 9500000, guid: e468fc648402edb45bddb1f271a04761,
@@ -921,7 +974,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 388222226}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -4105,6 +4158,7 @@ GameObject:
   - component: {fileID: 1345119281}
   - component: {fileID: 1345119283}
   - component: {fileID: 1345119284}
+  - component: {fileID: 1345119285}
   m_Layer: 0
   m_Name: AreaSampahMuncul (1)
   m_TagString: Enviro
@@ -4121,7 +4175,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -34.85, y: 31.470001, z: 0.5068}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 253772852}
   m_Father: {fileID: 42933180}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -4188,6 +4243,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sampahDihapus: {fileID: 1040749898}
   skorTeks: {fileID: 1894480149}
+--- !u!114 &1345119285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1345119279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 20, y: 20}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &1349661747
 GameObject:
   m_ObjectHideFlags: 0
@@ -6040,8 +6118,7 @@ MonoBehaviour:
   mapViewMode: {fileID: 872791523}
   playerViewMode: {fileID: 496357023}
   cameraSpeed: 0
-  mapView: {x: 0, y: 64, z: -112}
-  playerView: {x: 0, y: 4, z: -24}
+  batas: {x: 0, y: 4, z: -24}
 --- !u!1 &2104072689
 GameObject:
   m_ObjectHideFlags: 0
@@ -6202,18 +6279,7 @@ MonoBehaviour:
   panelAvatar: {fileID: 212684497}
   saveLoadDialog: {fileID: 604602297}
   backBtn: {fileID: 863947891}
-  rumah: {fileID: 0}
   player: {fileID: 388222226}
-  kumpulanRumah:
-  - {fileID: 100002, guid: a0b387bcb62fbaf4bac9a7fb9fc47dc3, type: 3}
-  - {fileID: 100004, guid: a0b387bcb62fbaf4bac9a7fb9fc47dc3, type: 3}
-  - {fileID: 100006, guid: a0b387bcb62fbaf4bac9a7fb9fc47dc3, type: 3}
-  - {fileID: 100008, guid: a0b387bcb62fbaf4bac9a7fb9fc47dc3, type: 3}
-  - {fileID: 100010, guid: a0b387bcb62fbaf4bac9a7fb9fc47dc3, type: 3}
-  jumlahRumah: 0
-  nilaiX: 4
-  nilaiY: 0.1483914
-  nilaiZ: 24
 --- !u!114 &2105237799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6259,8 +6325,8 @@ MonoBehaviour:
   daySky: {fileID: 2100000, guid: 7e4024464a7f63a408ac3c1225f094f9, type: 2}
   nightSky: {fileID: 2100000, guid: e7471c7bc3e48f8408ba34ff15fec1e5, type: 2}
   intensity: 1
-  fogDay: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  fogNight: {r: 0, g: 0, b: 0, a: 1}
+  fogDay: {r: 0, g: 0, b: 0, a: 1}
+  fogNight: {r: 0.41176468, g: 0.41176468, b: 0.41176468, a: 1}
   speed: 75
   days: 0
 --- !u!222 &2105237801
