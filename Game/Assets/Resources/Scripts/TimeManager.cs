@@ -16,8 +16,7 @@ public class TimeManager : MonoBehaviour
     public Color fogDay = Color.grey, fogNight = Color.black;
     
     public int speed = 75;
-    [SerializeField]
-    int days = 0;
+    public int days = 0;
     // Variabel untuk jam realtime
     float num;
 
