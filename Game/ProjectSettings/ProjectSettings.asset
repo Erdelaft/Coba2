@@ -633,12 +633,14 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Build: 1
+    Collab: 1
     UNet: 1
   facebookSdkVersion: 7.10.1
   apiCompatibilityLevel: 2
-  cloudProjectId: a6fa28ef-a97a-4c92-a1e6-4252b3d44b2c
-  projectName: Game
-  organizationId: r-lan
+  cloudProjectId: 74373b85-9356-4caa-a68f-d8cf23c9a218
+  projectName: Flood Floody
+  organizationId: d-r-fe9d8b6c-84bf-4951-9be5-613701841af7
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

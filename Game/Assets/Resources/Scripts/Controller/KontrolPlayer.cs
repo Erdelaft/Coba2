@@ -9,7 +9,6 @@ public class KontrolPlayer : MonoBehaviour
     public float kecepatanKontrol = 10f;
     public AmbilSampah ambilSampah;
     public Animator playerAnim;
-
     float inputV, inputH;
 
     Transform playerPos;
