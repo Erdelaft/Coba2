@@ -9,7 +9,6 @@ public class KontrolPlayer : MonoBehaviour
     public float kecepatanKontrol = 10f;
     public AmbilSampah ambilSampah;
     public Animator playerAnim;
-    float inputV, inputH;
 
     Transform playerPos;
     int skor = 0;
@@ -41,12 +40,6 @@ public class KontrolPlayer : MonoBehaviour
             transform.Rotate(new Vector3(0f, -kecepatanKontrol / 2f, 0f));
         }
         playerAnim.Play("Idle", -1);
-        /*
-        inputH = Input.GetAxis("Horizontal");
-        inputV = Input.GetAxis("Vertical");
-
-        playerAnim.SetFloat("inputH", inputH);
-        playerAnim.SetFloat("inputV", inputV);*/
     }
 
     void OnTriggerEnter(Collider ambil)

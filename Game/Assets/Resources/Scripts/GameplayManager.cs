@@ -4,15 +4,17 @@ using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
-    public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, panelAvatar, saveLoadDialog, backBtn, player, hujan, efekJatuhHujan;
+    public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, panelAvatar, saveLoadDialog, backBtn, player, hujan, efekJatuhHujan, pesanIsu, pesanCaution, pesanDanger, pesanSelamat;
     public Transform sungai;
+    public Text skorTeks;
     public int hari;
     public int[] rangeWaktuHujan;
     KontrolPlayer kontrolPlayer;
     TimeManager hariBerlalu;
     TanamPohon tanamPohon;
     ParticleSystem tetesanHujan;
-    int tempInterval;
+    AmbilSampah ambilSampah;
+    int tempInterval, kondisiCuaca, maxNilaiSampah, maxNilaiTanamPohon, maxNilaiPerbaikiSaluranAir, skorTotal;
     float kurangiketinggianSungai, ketinggianSungai, intensitasHujan;
 
     public float titikTerendahSungai = -10f, titikTertinggiSungai = -3f;
@@ -52,21 +54,46 @@ public class GameplayManager : MonoBehaviour
                 efekJatuhHujan.SetActive(true);
             }
         }
-        if(tanamPohon.pohonFase1.activeInHierarchy == true)
+        if(tanamPohon.pohonFase1.activeInHierarchy)
         {
             kurangiketinggianSungai = tanamPohon.kurangiTinggiSungaiFase1;
         }
-        if(tanamPohon.pohonFase2.activeInHierarchy == true)
+        if(tanamPohon.pohonFase2.activeInHierarchy)
         {
             kurangiketinggianSungai = tanamPohon.kurangiTinggiSungaiFase2;
         }
-        if(tanamPohon.pohonFase3.activeInHierarchy == true)
+        if(tanamPohon.pohonFase3.activeInHierarchy)
         {
             kurangiketinggianSungai = tanamPohon.kurangiTinggiSungaiFase3;
         }
 
         ketinggianSungai += intensitasHujan;
         ketinggianSungai -= kurangiketinggianSungai;
+
+        string[] tempSkor = skorTeks.text.Split("/"[0]);
+        maxNilaiSampah = 15 * (Convert.ToInt32(tempSkor[0]) / Convert.ToInt32(tempSkor[1]));
+        maxNilaiTanamPohon = 45 * (GameObject.FindGameObjectsWithTag("Pohon").Length);
+        maxNilaiPerbaikiSaluranAir = 35;
+
+        skorTotal = maxNilaiPerbaikiSaluranAir + maxNilaiSampah + maxNilaiTanamPohon;
+
+        if(skorTotal > 90)
+        {
+            pesanSelamat.SetActive(true);
+            kontrolPlayer.enabled = false;
+        }
+        else if(skorTotal > 75)
+        {
+            pesanIsu.SetActive(true);
+        }
+        else if(skorTotal > 60)
+        {
+            pesanCaution.SetActive(true);
+        }
+        else
+        {
+            pesanDanger.SetActive(true);
+        }
     }
 
 	// Mode Menanam Pohon
@@ -106,7 +133,7 @@ public class GameplayManager : MonoBehaviour
 
     public void Backbtn()
     {
-        if(backBtn.activeInHierarchy == true)
+        if(backBtn.activeInHierarchy)
         {
             kontrolPlayer.enabled = true;
             panelAvatar.SetActive(false);
@@ -120,7 +147,15 @@ public class GameplayManager : MonoBehaviour
 
     public void SaveBtn()
     {
-
+        if(hujan.activeInHierarchy)
+        {
+            kondisiCuaca = 1;
+        }
+        else
+        {
+            kondisiCuaca = 0;
+        }
+        
     }
 
     public void LoadBtn()
