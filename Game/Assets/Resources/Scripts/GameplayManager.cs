@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
-    public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, panelAvatar, saveLoadDialog, backBtn, player, hujan, efekJatuhHujan, pesanIsu, pesanCaution, pesanDanger, pesanSelamat, interaksiMobil, mobil;
+    public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, panelAvatar, saveLoadDialog, backBtn, player, hujan, efekJatuhHujan, pesanIsu, pesanCaution, pesanDanger, pesanSelamat, interaksiMobil, mobil, mapViewMode, playerViewMode, cameraPlayer, cameraMap;
     public Transform sungai;
     public Text skorTeks;
     public int hari;
@@ -64,19 +64,9 @@ public class GameplayManager : MonoBehaviour
                 efekJatuhHujan.SetActive(true);
             }
         }
-        if (tanamPohon.pohonFase1.activeInHierarchy)
-        {
-            kurangiketinggianSungai = tanamPohon.kurangiTinggiSungaiFase1;
-        }
-        if (tanamPohon.pohonFase2.activeInHierarchy)
-        {
-            kurangiketinggianSungai = tanamPohon.kurangiTinggiSungaiFase2;
-        }
-        if (tanamPohon.pohonFase3.activeInHierarchy)
-        {
-            kurangiketinggianSungai = tanamPohon.kurangiTinggiSungaiFase3;
-        }
 
+        kurangiketinggianSungai = tanamPohon.kurangiTinggiSungaiFase2;
+        
         ketinggianSungai += intensitasHujan + Convert.ToInt32(ambilSampah.tempSkor[0]) / 30 * Time.deltaTime;
         ketinggianSungai -= kurangiketinggianSungai * Time.deltaTime;
 
@@ -109,7 +99,6 @@ public class GameplayManager : MonoBehaviour
     // Mode Menanam Pohon
     public void ModeTanamPohon()
     {
-        modeAmbilSampah.SetActive(false);
         modeBangunSaluranAir.SetActive(false);
         modeTanamPohon.SetActive(true);
         progressAmbilSampah.SetActive(false);
@@ -128,7 +117,6 @@ public class GameplayManager : MonoBehaviour
     // Mode Membangun Saluran Air
     public void ModeBangunSaluranAir()
     {
-        modeAmbilSampah.SetActive(false);
         modeBangunSaluranAir.SetActive(true);
         modeTanamPohon.SetActive(false);
         progressAmbilSampah.SetActive(false);
@@ -148,8 +136,8 @@ public class GameplayManager : MonoBehaviour
     // Memperlihatkan tingkat kepedulian dan Options
     public void AvatarBtn()
     {
-        panelAvatar.SetActive(true);
-        kontrolPlayer.enabled = false;
+     //   panelAvatar.SetActive(true);
+     //   kontrolPlayer.enabled = false;
     }
 
     public void Backbtn()
@@ -159,6 +147,22 @@ public class GameplayManager : MonoBehaviour
             kontrolPlayer.enabled = true;
             panelAvatar.SetActive(false);
         }
+    }
+
+    public void PlayerView(bool aktif)
+    {
+        playerViewMode.SetActive(!aktif);
+        mapViewMode.SetActive(aktif);
+        cameraPlayer.SetActive(true);
+        cameraMap.SetActive(false);
+    }
+
+    public void MapView(bool aktif)
+    {
+        mapViewMode.SetActive(!aktif);
+        playerViewMode.SetActive(aktif);
+        cameraMap.SetActive(true);
+        cameraPlayer.SetActive(false);
     }
 
     public void SaveLoadDialog(bool aktif)
