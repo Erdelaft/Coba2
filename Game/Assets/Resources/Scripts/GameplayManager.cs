@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
-    public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, panelAvatar, saveLoadDialog, backBtn, player, hujan, efekJatuhHujan, pesanIsu, pesanCaution, pesanDanger, pesanSelamat, interaksiMobil, mobil, mapViewMode, playerViewMode, cameraPlayer, cameraMap;
+    public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, panelAvatar, saveLoadDialog, backBtn, player, hujan, efekJatuhHujan, pesanIsu, pesanCaution, pesanDanger, pesanSelamat, interaksiMobil, mobil, mapViewMode, playerViewMode, cameraPlayer, cameraMap, panelSelamat;
     public Transform sungai;
     public Text skorTeks;
     public int hari;
@@ -77,10 +77,11 @@ public class GameplayManager : MonoBehaviour
 
         skorTotal = maxNilaiPerbaikiSaluranAir + maxNilaiSampah + maxNilaiTanamPohon;
 
-        if (skorTotal > 90)
+        if (skorTotal > 90 || hariBerlalu.days == 4)
         {
             pesanSelamat.SetActive(true);
             kontrolPlayer.enabled = false;
+            panelSelamat.SetActive(true);
         }
         else if (skorTotal > 75)
         {
