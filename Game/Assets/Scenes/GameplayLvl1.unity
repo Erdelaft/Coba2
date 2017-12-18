@@ -1311,6 +1311,8 @@ MonoBehaviour:
   kecepatanKontrol: 3
   ambilSampah: {fileID: 1040749898}
   playerAnim: {fileID: 388222228}
+  playerPos: {fileID: 0}
+  skor: 0
 --- !u!1 &393643053
 GameObject:
   m_ObjectHideFlags: 0
@@ -6983,7 +6985,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 982693972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 450.03534, z: 0}
+  m_LocalPosition: {x: 0, y: 446.8772, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1579667957}
@@ -8122,8 +8124,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1332876594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 424.5, y: 298.5, z: 0}
-  m_LocalScale: {x: 0.66328126, y: 0.66328126, z: 0.66328126}
+  m_LocalPosition: {x: 427.5, y: 298.5, z: 0}
+  m_LocalScale: {x: 0.66796875, y: 0.66796875, z: 0.66796875}
   m_Children:
   - {fileID: 1553043736}
   - {fileID: 1789057861}
@@ -8538,6 +8540,8 @@ MonoBehaviour:
   kecepatanKontrol: 3
   ambilSampah: {fileID: 1040749898}
   playerAnim: {fileID: 1389489400}
+  playerPos: {fileID: 0}
+  skor: 0
 --- !u!65 &1389489398
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9866,7 +9870,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1874702649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 450.03534, z: 0}
+  m_LocalPosition: {x: 0, y: 446.8772, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1332876595}

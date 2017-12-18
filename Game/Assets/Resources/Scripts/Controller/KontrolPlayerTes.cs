@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class KontrolPlayer : MonoBehaviour
 {
-    public KeyCode maju, mundur, kanan, kiri;
     public float kecepatanKontrol = 10f;
     public AmbilSampah ambilSampah;
     public Animator playerAnim;
@@ -21,25 +20,25 @@ public class KontrolPlayer : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-		if(Input.GetKey(maju))
+		if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-			transform.Translate(new Vector3(0f, 0f, kecepatanKontrol * Time.deltaTime));
-            playerAnim.SetTrigger("walk_run");
+			transform.Translate(new Vector3(0f, 0f, kecepatanKontrol * Time.deltaTime));    
         }
-        else if (Input.GetKey(mundur))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
-            playerAnim.SetTrigger("walk_run");
             transform.Translate(new Vector3(0f, 0f, -kecepatanKontrol * Time.deltaTime));
         }
-        if (Input.GetKey(kanan))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(new Vector3(0f, kecepatanKontrol / 2f, 0f));
         }
-        if (Input.GetKey(kiri))
+		if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(new Vector3(0f, -kecepatanKontrol / 2f, 0f));
         }
         playerAnim.Play("Idle", -1);
+
+
     }
 
     void OnTriggerEnter(Collider ambil)
