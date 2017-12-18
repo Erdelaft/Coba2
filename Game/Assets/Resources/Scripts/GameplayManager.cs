@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
-    public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, panelAvatar, saveLoadDialog, backBtn, player, hujan, efekJatuhHujan, pesanIsu, pesanCaution, pesanDanger, pesanSelamat;
-    public Transform sungai;
+    public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, panelAvatar, saveLoadDialog, backBtn, player, hujan, efekJatuhHujan, pesanIsu, pesanCaution, pesanDanger, pesanSelamat,interaksiMobil;
+    public Transform sungai,mobil;
     public Text skorTeks;
     public int hari;
     public int[] rangeWaktuHujan;
@@ -123,6 +123,12 @@ public class GameplayManager : MonoBehaviour
         modeTanamPohon.SetActive(false);
         progressAmbilSampah.SetActive(false);
     }
+
+	// Interaksi mobil
+	public void InteraksiMobil()
+	{
+		
+	}
 
 	// Memperlihatkan tingkat kepedulian dan Options
 	public void AvatarBtn()
