@@ -20,7 +20,7 @@ public class KontrolPlayer : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.UpArrow))
+		if(Input.GetKey(KeyCode.UpArrow))
         {
 			transform.Translate(new Vector3(0f, 0f, kecepatanKontrol * Time.deltaTime));    
         }

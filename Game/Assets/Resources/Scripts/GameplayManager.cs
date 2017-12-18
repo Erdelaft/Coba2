@@ -1,11 +1,12 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
-    public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, panelAvatar, saveLoadDialog, backBtn, player, hujan, efekJatuhHujan, pesanIsu, pesanCaution, pesanDanger, pesanSelamat,interaksiMobil;
-    public Transform sungai,mobil;
+    public GameObject modeAmbilSampah, modeTanamPohon, modeBangunSaluranAir, avatarBtn, progressAmbilSampah, panelAvatar, saveLoadDialog, backBtn, player, hujan, efekJatuhHujan, pesanIsu, pesanCaution, pesanDanger, pesanSelamat, interaksiMobil, mobil;
+    public Transform sungai;
     public Text skorTeks;
     public int hari;
     public int[] rangeWaktuHujan;
@@ -14,14 +15,14 @@ public class GameplayManager : MonoBehaviour
     TanamPohon tanamPohon;
     ParticleSystem tetesanHujan;
     AmbilSampah ambilSampah;
-    int tempInterval, kondisiCuaca, maxNilaiSampah, maxNilaiTanamPohon, maxNilaiPerbaikiSaluranAir, skorTotal;
+    int tempInterval, kondisiCuaca, maxNilaiSampah, maxNilaiTanamPohon, maxNilaiPerbaikiSaluranAir, skorTotal, mobilMuncul;
     float kurangiketinggianSungai, ketinggianSungai, intensitasHujan;
 
     public float titikTerendahSungai = -10f, titikTertinggiSungai = -3f;
 
     // Use this for initialization
-    void Start ()
-	{
+    void Start()
+    {
         kontrolPlayer = player.GetComponent<KontrolPlayer>();
         tanamPohon = GetComponent<TanamPohon>();
         hujan = GetComponent<GameObject>();
@@ -33,11 +34,20 @@ public class GameplayManager : MonoBehaviour
 
         Debug.Log(intensitasHujan);
     }
-	
-	// Update is called once per frame
-	void Update ()
-	{
-        if(rangeWaktuHujan[0] > rangeWaktuHujan[1])
+
+    // Update is called once per frame
+    void Update()
+    {
+        mobilMuncul = UnityEngine.Random.Range(23000, 64000);
+
+        if(hariBerlalu.time == mobilMuncul)
+        {
+            mobil = GameObject.FindGameObjectWithTag("Mobil");
+
+            mobil.SetActive(true);
+        }
+
+        if (rangeWaktuHujan[0] > rangeWaktuHujan[1])
         {
             tempInterval = rangeWaktuHujan[1];
             rangeWaktuHujan[1] = rangeWaktuHujan[0];
@@ -46,29 +56,29 @@ public class GameplayManager : MonoBehaviour
 
         tempInterval = UnityEngine.Random.Range(rangeWaktuHujan[0], rangeWaktuHujan[1]);
 
-        if(hariBerlalu.days == hari)
+        if (hariBerlalu.days == hari)
         {
-            if(Convert.ToInt32(hariBerlalu.time) == tempInterval)
+            if (Convert.ToInt32(hariBerlalu.time) == tempInterval)
             {
                 hujan.SetActive(true);
                 efekJatuhHujan.SetActive(true);
             }
         }
-        if(tanamPohon.pohonFase1.activeInHierarchy)
+        if (tanamPohon.pohonFase1.activeInHierarchy)
         {
             kurangiketinggianSungai = tanamPohon.kurangiTinggiSungaiFase1;
         }
-        if(tanamPohon.pohonFase2.activeInHierarchy)
+        if (tanamPohon.pohonFase2.activeInHierarchy)
         {
             kurangiketinggianSungai = tanamPohon.kurangiTinggiSungaiFase2;
         }
-        if(tanamPohon.pohonFase3.activeInHierarchy)
+        if (tanamPohon.pohonFase3.activeInHierarchy)
         {
             kurangiketinggianSungai = tanamPohon.kurangiTinggiSungaiFase3;
         }
 
-        ketinggianSungai += intensitasHujan;
-        ketinggianSungai -= kurangiketinggianSungai;
+        ketinggianSungai += intensitasHujan + Convert.ToInt32(ambilSampah.tempSkor[0]) / 30 * Time.deltaTime;
+        ketinggianSungai -= kurangiketinggianSungai * Time.deltaTime;
 
         string[] tempSkor = skorTeks.text.Split("/"[0]);
         maxNilaiSampah = 15 * (Convert.ToInt32(tempSkor[0]) / Convert.ToInt32(tempSkor[1]));
@@ -77,16 +87,16 @@ public class GameplayManager : MonoBehaviour
 
         skorTotal = maxNilaiPerbaikiSaluranAir + maxNilaiSampah + maxNilaiTanamPohon;
 
-        if(skorTotal > 90)
+        if (skorTotal > 90)
         {
             pesanSelamat.SetActive(true);
             kontrolPlayer.enabled = false;
         }
-        else if(skorTotal > 75)
+        else if (skorTotal > 75)
         {
             pesanIsu.SetActive(true);
         }
-        else if(skorTotal > 60)
+        else if (skorTotal > 60)
         {
             pesanCaution.SetActive(true);
         }
@@ -96,9 +106,9 @@ public class GameplayManager : MonoBehaviour
         }
     }
 
-	// Mode Menanam Pohon
-	public void ModeTanamPohon()
-	{
+    // Mode Menanam Pohon
+    public void ModeTanamPohon()
+    {
         modeAmbilSampah.SetActive(false);
         modeBangunSaluranAir.SetActive(false);
         modeTanamPohon.SetActive(true);
@@ -106,40 +116,45 @@ public class GameplayManager : MonoBehaviour
 
     }
 
-	// Mode Mengambil Sampah
-	public void ModeAmbilSampah()
-	{
+    // Mode Mengambil Sampah
+    public void ModeAmbilSampah()
+    {
         modeAmbilSampah.SetActive(true);
         modeBangunSaluranAir.SetActive(false);
         modeTanamPohon.SetActive(false);
         progressAmbilSampah.SetActive(true);
     }
 
-	// Mode Membangun Saluran Air
-	public void ModeBangunSaluranAir()
-	{
+    // Mode Membangun Saluran Air
+    public void ModeBangunSaluranAir()
+    {
         modeAmbilSampah.SetActive(false);
         modeBangunSaluranAir.SetActive(true);
         modeTanamPohon.SetActive(false);
         progressAmbilSampah.SetActive(false);
     }
 
-	// Interaksi mobil
-	public void InteraksiMobil()
-	{
-		
-	}
+    // Interaksi mobil
+    public void InteraksiMobil()
+    {
 
-	// Memperlihatkan tingkat kepedulian dan Options
-	public void AvatarBtn()
-	{
+    }
+
+    public void ChangeScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
+    // Memperlihatkan tingkat kepedulian dan Options
+    public void AvatarBtn()
+    {
         panelAvatar.SetActive(true);
         kontrolPlayer.enabled = false;
-	}
+    }
 
     public void Backbtn()
     {
-        if(backBtn.activeInHierarchy)
+        if (backBtn.activeInHierarchy)
         {
             kontrolPlayer.enabled = true;
             panelAvatar.SetActive(false);
@@ -153,14 +168,6 @@ public class GameplayManager : MonoBehaviour
 
     public void SaveBtn()
     {
-        if(hujan.activeInHierarchy)
-        {
-            kondisiCuaca = 1;
-        }
-        else
-        {
-            kondisiCuaca = 0;
-        }
         
     }
 

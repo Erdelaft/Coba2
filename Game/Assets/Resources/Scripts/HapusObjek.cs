@@ -25,5 +25,9 @@ public class HapusObjek : MonoBehaviour
 
             skorTeks.text = sampahDihapus.tempSkor[0] + " / " + sampahDihapus.tempSkor[1];
         }
+        if(hapus.tag == "Mobil")
+        {
+            Destroy(hapus);
+        }
     }
 }

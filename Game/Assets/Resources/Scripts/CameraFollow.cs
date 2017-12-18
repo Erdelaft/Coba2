@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform playerTarget;
-    public GameObject mapViewMode, playerViewMode;
+    public GameObject mapViewMode, playerViewMode, cameraPlayer, cameraMap;
     public float cameraSpeed;
      Vector3 mapView;
      Vector3 playerView;
@@ -30,24 +30,16 @@ public class CameraFollow : MonoBehaviour
     {
         playerViewMode.SetActive(!aktif);
         mapViewMode.SetActive(aktif);
-        batas = playerView;
+        cameraPlayer.SetActive(true);
+        cameraMap.SetActive(false);
     }
 
     public void MapView(bool aktif)
     {
         mapViewMode.SetActive(!aktif);
         playerViewMode.SetActive(aktif);
-        batas = mapView;
+        cameraMap.SetActive(true);
+        cameraPlayer.SetActive(false);
     }
-
-    /*
-	// Update is called once per frame
-	void LateUpdate ()
-    {
-        playerPos = playerTarget.position + batas;
-        smoothPos = Vector3.Lerp(transform.position, playerPos, cameraSpeed * Time.deltaTime);
-        transform.position = smoothPos;
-        
-        transform.LookAt(playerTarget);
-	}*/
+    
 }

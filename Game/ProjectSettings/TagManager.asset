@@ -8,6 +8,8 @@ TagManager:
   - Enviro
   - Manager
   - Sampah
+  - LampuJalan
+  - Mobil
   layers:
   - Default
   - TransparentFX
