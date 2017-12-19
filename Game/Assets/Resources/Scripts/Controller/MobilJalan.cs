@@ -11,7 +11,8 @@ public class MobilJalan : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        mobil1 = GetComponent<Transform>();
+		gameObject.SetActive (true);
+		mobil1 = GetComponent<Transform>();
     }
 	
 	// Update is called once per frame

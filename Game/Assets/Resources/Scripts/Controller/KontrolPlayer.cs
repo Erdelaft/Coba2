@@ -56,3 +56,45 @@ public class KontrolPlayer : MonoBehaviour
         }
     }
 }
+
+/*
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class KontrolPlayer : MonoBehaviour {
+
+	public float kecepatanPindah = 10f;
+	public float kecepatanPutar = 40f;
+
+	private CharacterController kontrol;
+
+	public Animation anim;
+	// Use this for initialization
+	void Start () {
+		kontrol = GetComponent<CharacterController> ();
+	}
+
+	// Update is called once per frame
+	void Update () {
+		Move ();
+		if (kontrol.velocity.magnitude > 0) {
+			anim.Play ("walk_run");
+		} else {
+			anim.Play ("Idle");
+		}
+	}
+
+	void Move ()
+	{
+		float gerakZ = Input.GetAxis ("Vertical") * kecepatanPindah * Time.deltaTime;
+		float gerakX = Input.GetAxis ("Horinzontal") * kecepatanPutar * Time.deltaTime;
+
+		Vector3 arah = new Vector3 (gerakX, 0f, gerakZ);
+
+		kontrol.Move (arah);
+	}
+}
+
+*/
