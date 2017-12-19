@@ -6,7 +6,7 @@ public class MobilJalan : MonoBehaviour
 {
     public float mobilSpeed = 15;
     Transform mobil1, mobil2, mobil3, mobil4;
-    float gerakAwal, ubahArah = 0;
+    public float gerakAwal, ubahArah = 0;
 
 	// Use this for initialization
 	void Start ()

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class UbahArah : MonoBehaviour
 {
+    MobilJalan mobilJalan;
 
 	// Use this for initialization
 	void Start ()
     {
-
+        mobilJalan = GetComponent<MobilJalan>();
 	}
 	
 	// Update is called once per frame
@@ -22,6 +23,8 @@ public class UbahArah : MonoBehaviour
         if(mobil.name == "Mobil1")
         {
             mobil.transform.Rotate(new Vector3(0f, -90, 0f));
+            mobilJalan.ubahArah = -mobilJalan.gerakAwal;
+            mobilJalan.gerakAwal = 0;
         }
         if(mobil.name == "Mobil2")
         {
