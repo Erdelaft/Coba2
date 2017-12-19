@@ -5,28 +5,51 @@ using UnityEngine.UI;
 
 public class KontrolPlayer : MonoBehaviour
 {
-    public float kecepatanKontrol = 10f;
+    public float kecepatanKontrol = 5f;
     public AmbilSampah ambilSampah;
     public Animator playerAnim;
 
     Transform playerPos;
     int skor = 0;
+    
+    public float kecepatanPindah = 10f;
+    public float kecepatanPutar = 40f;
+
+    private CharacterController kontrol;
 
     void Start()
     {
         playerAnim = GetComponent<Animator>();
+
+        kontrol = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update ()
     {
-		if(Input.GetKey(KeyCode.UpArrow))
+        Vector3 idlePos = new Vector3(0f, 0f, 0f);
+        /*
+        Move();
+        if (kontrol.velocity.magnitude > 0)
         {
-			transform.Translate(new Vector3(0f, 0f, kecepatanKontrol * Time.deltaTime));    
+            anim.Play("walk_run");
+        }
+        else
+        {
+            anim.Play("Idle");
+        }
+        */
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            //transform.Translate(new Vector3(0f, 0f, kecepatanKontrol * Time.deltaTime));
+            playerAnim.Play("walk_run");
+            transform.Translate(Vector3.forward * kecepatanKontrol * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Translate(new Vector3(0f, 0f, -kecepatanKontrol * Time.deltaTime));
+            //transform.Translate(new Vector3(0f, 0f, -kecepatanKontrol * Time.deltaTime));
+            playerAnim.Play("walk_run");
+            transform.Translate(Vector3.back * kecepatanKontrol * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -37,14 +60,15 @@ public class KontrolPlayer : MonoBehaviour
             transform.Rotate(new Vector3(0f, -kecepatanKontrol / 2f, 0f));
         }
         playerAnim.Play("Idle", -1);
-
-
+        
     }
 
     void OnTriggerEnter(Collider ambil)
     {
         if (ambil.gameObject.tag == "Sampah")
         {
+            playerAnim.Play("ambil_sampah");
+
             Destroy(ambil.gameObject);
 
             skor++;
@@ -55,37 +79,7 @@ public class KontrolPlayer : MonoBehaviour
             ambilSampah.jumlahSampahDiAmbil.text = ambilSampah.tempSkor[0] + " / " + ambilSampah.tempSkor[1];
         }
     }
-}
-
-/*
-
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class KontrolPlayer : MonoBehaviour {
-
-	public float kecepatanPindah = 10f;
-	public float kecepatanPutar = 40f;
-
-	private CharacterController kontrol;
-
-	public Animation anim;
-	// Use this for initialization
-	void Start () {
-		kontrol = GetComponent<CharacterController> ();
-	}
-
-	// Update is called once per frame
-	void Update () {
-		Move ();
-		if (kontrol.velocity.magnitude > 0) {
-			anim.Play ("walk_run");
-		} else {
-			anim.Play ("Idle");
-		}
-	}
-
+    
 	void Move ()
 	{
 		float gerakZ = Input.GetAxis ("Vertical") * kecepatanPindah * Time.deltaTime;
@@ -96,5 +90,3 @@ public class KontrolPlayer : MonoBehaviour {
 		kontrol.Move (arah);
 	}
 }
-
-*/

@@ -53,20 +53,19 @@ public class TimeManager : MonoBehaviour
 
         sunTransform.rotation = Quaternion.Euler(new Vector3((time - 21600) / 86400 * 360, 0, 0));      // Rotasi Matahari
 
-        if (time > 21600 && time < 64800)
+        if (time > 21600 && time < 64800)           // Siang Hari
         {
-            intensity = 0.75f - (43200 - time) / 43200;
+            intensity = 1f - (43200 - time) / 43200;
             lampuJalan[0].SetActive(false);
             lampuJalan[1].SetActive(false);
             lampuJalan[2].SetActive(false);
             lampuJalan[3].SetActive(false);
             RenderSettings.skybox = daySky1;                 // Berganti material ketika siang hari
-
-
         }
-        if(time < 21600 || time > 64800)
+
+        if(time < 21600 || time > 64800)            // Malam Hari
         {
-            intensity = 1 - ((43200 - time) / 43200 * -1);
+            intensity = 0.5f - ((43200 - time) / 43200 * -1);
             lampuJalan[0].SetActive(true);
             lampuJalan[1].SetActive(true);
             lampuJalan[2].SetActive(true);

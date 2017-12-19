@@ -36,17 +36,8 @@ public class AmbilSampah : MonoBehaviour
             kumpulanSampah.AddComponent<Rigidbody>();
             kumpulanSampah.AddComponent<BoxCollider>();
         }
-        /*
-        teksSkor = jumlahSampahDiAmbil.text;
-        //Debug.Log( "Teks Skor : " + teksSkor );
 
-        tempSkor = teksSkor.Split("/"[0]);
-        tempSkor[0] = skorSampahDiAmbil.ToString();
-        tempSkor[1] = jumlahSampah.ToString();
-
-        jumlahSampahDiAmbil.text = tempSkor[0] + " / " + tempSkor[1];
-        */
-        Debug.Log("x = " + Random.Range(4f, areaSampahX) + "/nz = " + Random.Range(4f, areaSampahZ));
+        //Debug.Log("x = " + Random.Range(4f, areaSampahX) + " z = " + Random.Range(4f, areaSampahZ));
 
         teksSkor = jumlahSampahDiAmbil.text;
         //Debug.Log( "Teks Skor : " + teksSkor );
@@ -57,18 +48,4 @@ public class AmbilSampah : MonoBehaviour
 
         jumlahSampahDiAmbil.text = tempSkor[0] + " / " + tempSkor[1];
     }
-    /*
-    void Update()
-    {
-        teksSkor = jumlahSampahDiAmbil.text;
-        //Debug.Log( "Teks Skor : " + teksSkor );
-
-        tempSkor = teksSkor.Split("/"[0]);
-        tempSkor[0] = skorSampahDiAmbil.ToString();
-        tempSkor[1] = jumlahSampah.ToString();
-
-        jumlahSampahDiAmbil.text = tempSkor[0] + " / " + tempSkor[1];
-
-    }
-    */
 }
