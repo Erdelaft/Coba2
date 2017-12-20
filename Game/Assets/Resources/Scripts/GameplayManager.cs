@@ -137,8 +137,8 @@ public class GameplayManager : MonoBehaviour
     // Memperlihatkan tingkat kepedulian dan Options
     public void AvatarBtn()
     {
-     //   panelAvatar.SetActive(true);
-     //   kontrolPlayer.enabled = false;
+        panelAvatar.SetActive(true);
+        kontrolPlayer.enabled = false;
     }
 
     public void Backbtn()
