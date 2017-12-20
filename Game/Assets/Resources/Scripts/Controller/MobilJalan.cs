@@ -21,19 +21,19 @@ public class MobilJalan : MonoBehaviour
         gerakAwal = mobilSpeed * Time.deltaTime;
         if (mobil1)
         {
-            mobil1.transform.Translate(new Vector3(ubahArah, 0f, gerakAwal));
+            mobil1.transform.Translate(Vector3.forward * gerakAwal * Time.deltaTime);
         }
         if (mobil2)
         {
-            mobil2.transform.Translate(new Vector3(-gerakAwal, 0f, ubahArah));
+            mobil2.transform.Translate(Vector3.forward * gerakAwal * Time.deltaTime);
         }
         if (mobil3)
         {
-            mobil3.transform.Translate(new Vector3(ubahArah, 0f, -gerakAwal));
+            mobil3.transform.Translate(Vector3.forward * gerakAwal * Time.deltaTime);
         }
         if (mobil4)
         {
-            mobil4.transform.Translate(new Vector3(gerakAwal, 0f, ubahArah));
+            mobil4.transform.Translate(Vector3.forward * gerakAwal * Time.deltaTime);
         }
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HapusObjek : MonoBehaviour
 {
     public AmbilSampah sampahDihapus;
+    public GameObject posisiAwalMobil, posisiMobil;
     public Text skorTeks;
 
     void Start()
@@ -25,9 +26,10 @@ public class HapusObjek : MonoBehaviour
 
             skorTeks.text = sampahDihapus.tempSkor[0] + " / " + sampahDihapus.tempSkor[1];
         }
-        if(hapus.tag == "Mobil")
+        if(hapus.name == posisiMobil.name)
         {
-            Destroy(hapus);
+            posisiMobil.SetActive(false);
+            posisiMobil.transform.position = posisiAwalMobil.transform.TransformPoint(0f, 0f, 0f);
         }
     }
 }

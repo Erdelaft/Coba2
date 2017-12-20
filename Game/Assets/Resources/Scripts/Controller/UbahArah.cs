@@ -23,8 +23,6 @@ public class UbahArah : MonoBehaviour
         if(mobil.name == "Mobil1")
         {
             mobil.transform.Rotate(new Vector3(0f, -90, 0f));
-            mobilJalan.ubahArah = -mobilJalan.gerakAwal;
-            mobilJalan.gerakAwal = 0;
         }
         if(mobil.name == "Mobil2")
         {
