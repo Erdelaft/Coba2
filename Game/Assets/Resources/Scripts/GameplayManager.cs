@@ -10,6 +10,9 @@ public class GameplayManager : MonoBehaviour
     public Text skorTeks;
     public int hari;
     public int[] rangeWaktuHujan;
+    public Slider volumeBGM, volumeSFX;
+    public AudioSource bgMusic, soundFx;
+
     KontrolPlayer kontrolPlayer;
     TimeManager hariBerlalu;
     TanamPohon tanamPohon;
@@ -95,6 +98,10 @@ public class GameplayManager : MonoBehaviour
         {
             pesanDanger.SetActive(true);
         }
+
+        //  Volume BGM dan SFX
+        bgMusic.volume = volumeBGM.value;
+        soundFx.volume = volumeSFX.value;
     }
 
     // Mode Menanam Pohon

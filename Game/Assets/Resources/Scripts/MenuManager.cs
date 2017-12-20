@@ -8,39 +8,68 @@ public class MenuManager : MonoBehaviour
 {
 	public GameObject panelMenu, panelQuitConfirmation, panelSetting,
                       panelOption, panelAbout, panelLoading, background;
-    
+    public Slider volumeBGM, volumeSFX;
+    public AudioSource bgMusic, soundFx;
 
-	public void ChangeScene(string name)
+    void Start()
+    {
+        PlayerPrefs.SetFloat("VolumeSFX", soundFx.volume);
+        PlayerPrefs.Save();
+        soundFx.volume = PlayerPrefs.GetFloat("VolumeSFX");
+    }
+
+    void OnEnable()
+    {
+        volumeSFX.onValueChanged.AddListener(delegate { ChangeVolumeSfx(); });
+    }
+
+    void Update()
+    {
+        bgMusic.volume = volumeBGM.value;
+    }
+
+    void ChangeVolumeSfx()
+    {
+        soundFx.volume = volumeSFX.value;
+    }
+
+    public void ChangeScene(string name)
 	{
+        soundFx.Play();
 		SceneManager.LoadScene(name);
 	}
 
     public void PanelAbout(bool aktif)
     {
+        soundFx.Play();
         panelAbout.SetActive(!aktif);
         panelOption.SetActive(aktif);
     }
 
     public void PanelMenu(bool aktif)
     {
+        soundFx.Play();
         panelMenu.SetActive(!aktif);
         panelMenu.SetActive(aktif);
     }
 
     public void PanelSetting(bool aktif)
     {
+        soundFx.Play();
         panelSetting.SetActive(!aktif);
         panelOption.SetActive(aktif);
     }
 
     public void PanelOption(bool aktif)
     {
+        soundFx.Play();
         panelOption.SetActive(!aktif);
         panelMenu.SetActive(aktif);
     }
 
     public void BackButton()
     {
+        soundFx.Play();
         if (panelOption.activeInHierarchy == true)
         {
             panelOption.SetActive(false);
@@ -64,11 +93,13 @@ public class MenuManager : MonoBehaviour
 
 	public void PanelQuit(bool aktif)
 	{
+        soundFx.Play();
         panelQuitConfirmation.SetActive(!aktif);
 	}
 
     public void Loading(bool aktif)
     {
+        soundFx.Play();
         panelLoading.SetActive(!aktif);
         panelMenu.SetActive(aktif);
         background.SetActive(aktif);
@@ -76,6 +107,9 @@ public class MenuManager : MonoBehaviour
 
 	public void Quit()
 	{
-		Application.Quit();
+        soundFx.Play();
+        PlayerPrefs.SetFloat("VolumeSFX", soundFx.volume);
+        PlayerPrefs.Save();
+        Application.Quit();
 	}
 }
