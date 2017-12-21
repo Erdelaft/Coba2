@@ -36,6 +36,9 @@ public class GameplayManager : MonoBehaviour
         ketinggianSungai = sungai.transform.position.y;
 
         Debug.Log(intensitasHujan);
+        
+        soundFx.volume = PlayerPrefs.GetFloat("VolumeSFX");
+        bgMusic.volume = PlayerPrefs.GetFloat("VolumeBGM");
     }
 
     // Update is called once per frame
@@ -97,11 +100,27 @@ public class GameplayManager : MonoBehaviour
         else
         {
             pesanDanger.SetActive(true);
-        }
+        }        
+    }
 
-        //  Volume BGM dan SFX
-        bgMusic.volume = volumeBGM.value;
+    void OnEnable()
+    {
+        volumeSFX.onValueChanged.AddListener(delegate { ChangeVolumeSFX(); });
+        volumeBGM.onValueChanged.AddListener(delegate { ChangeVolumeBGM(); });
+    }
+
+    void ChangeVolumeSFX()
+    {
         soundFx.volume = volumeSFX.value;
+        PlayerPrefs.SetFloat("VolumeSFX", soundFx.volume);
+        PlayerPrefs.Save();
+    }
+
+    void ChangeVolumeBGM()
+    {
+        bgMusic.volume = volumeBGM.value;
+        PlayerPrefs.SetFloat("VolumeBGM", bgMusic.volume);
+        PlayerPrefs.Save();
     }
 
     // Mode Menanam Pohon

@@ -16,21 +16,35 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.SetFloat("VolumeSFX", soundFx.volume);
         PlayerPrefs.Save();
         soundFx.volume = PlayerPrefs.GetFloat("VolumeSFX");
+
+        PlayerPrefs.SetFloat("VolumeBGM", bgMusic.volume);
+        PlayerPrefs.Save();
+        bgMusic.volume = PlayerPrefs.GetFloat("VolumeBGM");
     }
 
     void OnEnable()
     {
         volumeSFX.onValueChanged.AddListener(delegate { ChangeVolumeSfx(); });
+        volumeBGM.onValueChanged.AddListener(delegate { ChangeVolumeBGM(); });
     }
 
     void Update()
     {
-        bgMusic.volume = volumeBGM.value;
+
     }
 
     void ChangeVolumeSfx()
     {
         soundFx.volume = volumeSFX.value;
+        PlayerPrefs.SetFloat("VolumeSFX", soundFx.volume);
+        PlayerPrefs.Save();
+    }
+
+    void ChangeVolumeBGM()
+    {
+        bgMusic.volume = volumeBGM.value;
+        PlayerPrefs.SetFloat("VolumeBGM", bgMusic.volume);
+        PlayerPrefs.Save();
     }
 
     public void ChangeScene(string name)
@@ -108,8 +122,6 @@ public class MenuManager : MonoBehaviour
 	public void Quit()
 	{
         soundFx.Play();
-        PlayerPrefs.SetFloat("VolumeSFX", soundFx.volume);
-        PlayerPrefs.Save();
         Application.Quit();
 	}
 }
